@@ -1,0 +1,43 @@
+body {
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  padding: 15px;
+  color: #d6b896;
+}
+
+header {
+  background-color: #9e120c;
+  position: sticky;
+  top: 0;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transactions,
+.sidebar {
+  border-right: 2px solid #d6b896;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.transactions {
+  width: 65%;
+  height: 150vh;
+}
+
+.sidebar {
+  width: 30%;
+  height: 25vh;
+  position: sticky;
+  top: 69px;
+}
