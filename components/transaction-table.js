@@ -27,6 +27,10 @@ function transactionTable(transactions) {
   thPrice.textContent = "Price";
   thDate.textContent = "Transaction date";
 
+  // adding event listener to the transactions header
+  thDate.addEventListener("click", sortByDate);
+  thDate.className = "transaction-date";
+
   // collect the pieces
   table.appendChild(tr);
   tr.appendChild(thName);

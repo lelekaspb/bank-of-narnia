@@ -13,6 +13,7 @@ async function filterByCreditcard(event) {
     const filteredTransactions = transactions.filter(
       (transaction) => transaction.credit_card_company === creditcardChosen
     );
+    // dataProxy.transactions = filteredTransactions;
     console.log(filteredTransactions);
 
     const table = transactionTable(filteredTransactions);
