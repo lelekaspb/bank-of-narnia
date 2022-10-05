@@ -5,18 +5,12 @@
 class TransactionProxy {
   constructor() {}
 
-  // set transactions(data) {
-  //   this.transactions = data;
-  // }
-
-  // get transactions() {
-  //   return this.transactions;
-  // }
-
   async getTransactions() {
-    const data = await getLocalTransactions();
+    let data = [];
+    data = await getTransactionsFromServer();
+    if (!data) {
+      data = await getLocalTransactions();
+    }
     return data;
   }
 }
-// constructor example
-// const transactionProxy = new TransactionProxy();

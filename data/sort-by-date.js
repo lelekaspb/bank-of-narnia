@@ -1,17 +1,20 @@
-async function sortByDate() {
+function sortByDate() {
   ascendingOrder = !ascendingOrder;
   console.log(ascendingOrder);
 
-  const dataProxy = new TransactionProxy();
-  const transactions = await dataProxy.getTransactions();
-  //const transactions = dataProxy.transactions();
+  let transactionsToSort = [];
+  if (filteredTransactions.length > 0) {
+    transactionsToSort = filteredTransactions;
+  } else {
+    transactionsToSort = transactions;
+  }
 
   // sort transactions by creditcard company name
   let sortedTransactions;
   if (ascendingOrder) {
-    sortedTransactions = transactions.sort(sortAscending);
+    sortedTransactions = transactionsToSort.sort(sortAscending);
   } else {
-    sortedTransactions = transactions.sort(sortDescending);
+    sortedTransactions = transactionsToSort.sort(sortDescending);
   }
 
   const table = transactionTable(sortedTransactions);

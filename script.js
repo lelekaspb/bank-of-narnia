@@ -1,9 +1,10 @@
 let ascendingOrder = true;
+let transactions = [];
+let filteredTransactions = [];
 
 window.addEventListener("load", async () => {
   const dataProxy = new TransactionProxy();
-  const transactions = await dataProxy.getTransactions();
-  console.log(transactions);
+  transactions = await dataProxy.getTransactions();
 
   const table = transactionTable(transactions);
   renderTable(table);

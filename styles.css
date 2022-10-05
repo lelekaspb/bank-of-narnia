@@ -50,6 +50,11 @@ table tr {
   display: grid;
   grid-template-columns: 1fr 0.3fr 0.5fr;
   gap: 50px;
+  padding: 0.5rem 0;
+}
+
+table tr:nth-child(even) {
+  background-color: antiquewhite;
 }
 
 table tr th {
